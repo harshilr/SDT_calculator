@@ -55,7 +55,7 @@ public class Main {
                     break;
                 case 7:
                     System.out.println("Goodbye!");
-                    break;
+                    System.exit(0);
                 default:
                     throw new RuntimeException("Invalid number! Calculator crashing!");
             }
@@ -67,8 +67,11 @@ public class Main {
                 if (!again.equals("y") && !again.equals("n")) {
                     System.out.println("Invalid entry. Try again");
                 }
+                else{
+                    invalid=false;
+                }
             } while (invalid);
-        } while (again == "y");
+        } while (again.equals("y"));
     }
 
     private static void chooseNumbers(Scanner scanner) {
